@@ -1,0 +1,57 @@
+Admin
+1.	Sign In :
+    o	Admin will sign in with the already pre-entered credentials present in the database
+2.	Add medicine :
+    o	Admin can add the new medicine with details like medicine name, company name, price, quantity, uses and expire date with the auto-generated medicine id and etc if necessary
+3.	Update medicine
+    o	Admin can update the price, quantities and company name
+    o	Discounts for the particular medicine if required
+4.	Delete medicine
+    o	Admin can delete the medicine which has no demands (zero demand in the market)
+    o	If medicine expired.
+5.	Generate Reports
+    o	Admin can view the reports that are ordered by users
+    o	Admin must able to customize the reports like
+        	Stock reports
+        	Sales reports
+        	Medicine reports
+        	Range report like
+        	Monthly reports
+        	Weekly reports
+        	yearly reports
+6.	Logout
+    0.	Log out from the application
+http://localhost:8080/api/user
+
+User
+1. Sign up:
+    •	Admin can view the reports that are ordered by user
+    •	User can signup entering details like firstname, lastname, email, password, dob, phone no, address and user id should be auto-generated
+    •	Once user registers, user should able to see the auto-generated id using that user can sign in
+    •	Once user registers there should be some default amount to purchase items like 1000.
+    •	Sign in:
+    o	Sign in will take user id and password, on successful authentication go to the dashboard of the user else show the error messages and allow user to re-login
+    •	Search medicine:
+    User must able to search medicine by uses or disease
+
+1.	Select medicine:
+    o	User must able to add medicine to the cart
+2.	Delete items:
+    o	User must able to delete medicine from the cart
+3.	Update items:
+    o	User can update the quantities
+4.	View items in the cart:
+    o	User could able to see all the items added in the cart
+5.	Checkout:
+    o	Once all the items are selected user can checkout to order the items, which will deduct the amount if the money is present in the funds else user gets the error message insufficient amount, if the sufficient money is present in the funds, order must be placed successfully
+6.	Order Status:
+    o	User can see the history of orders and their status like delivered, shipped, out for delivery and etc
+7.	Edit Profile:
+    o	User must able to edit the profile like password, address, phone number, email id and etc
+8.	Funds:
+    o	Funds will show the available amount to purchase the items
+    o	User can add money by entering the account number and amount, all the users will have some account number with balance in their dummy bank account.
+    o	The amount user adds will be added to the profile funds which is utilized at the time of ordering the items
+9.	Logout:
+    o	Logout from the application
+
