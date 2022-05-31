@@ -21,8 +21,10 @@ public class ProductDTO {
     private Long productId;
     private String name;
     private String description;
+    private String imageUrl;
     private String supplier;
     private String usage;
+    private Long categoryId;
     private Double price;
     private Long quantity;
     private Date expire;

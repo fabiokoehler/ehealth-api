@@ -10,4 +10,6 @@ public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
     List<ProductEntity> findByUsageContaining(String usage);
 
+    ProductEntity findByProductId(Long productId);
+
 }

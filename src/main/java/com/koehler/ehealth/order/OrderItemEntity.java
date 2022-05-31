@@ -1,16 +1,8 @@
 package com.koehler.ehealth.order;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 
@@ -24,10 +16,11 @@ import java.util.Date;
 public class OrderItemEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long orderItemId;
     private Long orderId;
     private Long productId;
+    private Long quantity;
     private Date created;
     private Date updated;
 

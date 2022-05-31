@@ -1,10 +1,7 @@
 package com.koehler.ehealth.order;
 
-import com.koehler.ehealth.cart.CartService;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -13,11 +10,16 @@ import java.util.List;
 @RequestMapping(path = "/order")
 public class OrderController {
 
-    private final CartService service;
+    private final OrderService service;
 
     @GetMapping
     public List<OrderDTO> getOrders() {
-        return null;
+        return service.findAll();
+    }
+
+    @PostMapping
+    public OrderDTO createOrder(@RequestBody OrderDTO orderDTO) {
+        return service.createOrder(orderDTO);
     }
 
 }

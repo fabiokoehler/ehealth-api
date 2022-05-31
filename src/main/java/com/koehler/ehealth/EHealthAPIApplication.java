@@ -12,33 +12,36 @@ import org.springframework.context.annotation.Bean;
 @RequiredArgsConstructor
 @Slf4j
 @SpringBootApplication
-public class EHealthCareManagementSystemApplication {
+public class EHealthAPIApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(EHealthCareManagementSystemApplication.class, args);
+        SpringApplication.run(EHealthAPIApplication.class, args);
     }
 
     private final ProductRepository productRepository;
+
 
     @Bean
     public CommandLineRunner loadData() {
         return (args) -> {
             productRepository.save(ProductEntity.builder()
-                    .name("Product 1")
-                    .description("Description of product 1")
-                    .price(100.0)
+                    .name("Throatcalm Homeopathic Tablets for Sore Throat Relief")
+                    .description("ThroatCalm tablets relieve minor sore throat associated with colds and hoarseness from overused vocal cords. The homeopathic tablets dissolve under the tongue, causing no additional pain to swallow.")
+                    .price(11.99)
                     .quantity(50L)
-                    .supplier("Company 1")
-                    .usage("Headache")
+                    .supplier("Boiron")
+                    .usage("Temporarily relieves minor sore throat and hoarseness")
+                    .imageUrl("https://pics.drugstore.com/prodimg/609580/450.jpg")
                     .build());
 
             productRepository.save(ProductEntity.builder()
-                    .name("Product 2")
-                    .description("Description of product 2")
-                    .price(250.0)
+                    .name("Sore Throat Spray Cherry Cherry")
+                    .description("Chloraseptic Sore Throat Cherry is used for the temporary relief of occasional minor irritation, pain, sore mouth and sore throat.")
+                    .price(8.79)
                     .quantity(123L)
-                    .supplier("Company 2")
-                    .usage("Bellyache")
+                    .supplier("Chloraseptic")
+                    .usage("Relieves sore mouth and sore throat")
+                    .imageUrl("https://pics.drugstore.com/prodimg/11085/450.jpg")
                     .build());
 
             // fetch all customers
@@ -47,6 +50,8 @@ public class EHealthCareManagementSystemApplication {
             for (ProductEntity productEntity : productRepository.findAll()) {
                 log.info(productEntity.toString());
             }
+
+
         };
     }
 

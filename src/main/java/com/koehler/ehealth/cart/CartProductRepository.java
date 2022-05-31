@@ -9,8 +9,10 @@ import java.util.Optional;
 @Repository
 public interface CartProductRepository extends JpaRepository<CartProductEntity, Long> {
 
-    List<CartProductEntity> findByCartCartId(Long cartId);
+    //@Query(value = "select * from CART_PRODUCT where cart_id = :cartId ", nativeQuery = true)
+    List<CartProductEntity> findByCartId(Long cartId);
 
-    Optional<CartProductEntity> findByCartCartIdAndProductProductId(Long cartId, Long productId);
+    Optional<CartProductEntity> findByCartIdAndProductId(Long cartId, Long productId);
+
 
 }

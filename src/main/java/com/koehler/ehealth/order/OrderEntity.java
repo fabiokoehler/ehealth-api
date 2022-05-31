@@ -1,17 +1,8 @@
 package com.koehler.ehealth.order;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
 
@@ -22,19 +13,16 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "Order")
-@Table(name = "ORDER")
+@Table(name = "SALES_ORDER")
 public class OrderEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long orderId;
     private Long userId;
+    private String status;
     private Double total;
-    private Date created;
-    private Date updated;
-
-    @OneToMany
-    private List<OrderItemEntity> items;
-
+    //private Date created;
+    //private Date updated;
 
 }

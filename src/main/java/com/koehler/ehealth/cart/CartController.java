@@ -2,14 +2,7 @@ package com.koehler.ehealth.cart;
 
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @AllArgsConstructor
 @RestController
@@ -21,6 +14,11 @@ public class CartController {
     @GetMapping(path = "/{id}")
     public CartDTO getCart(@PathVariable("id") Long id) {
         return service.getCart(id);
+    }
+
+    @PostMapping
+    public CartDTO createCard() {
+        return service.createCart();
     }
 
     @PutMapping(path = "/{cartId}/product/{productId}", params = {"quantity"})
@@ -37,9 +35,9 @@ public class CartController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping(path = "/{id}")
-    public CartDTO checkout(@PathVariable("id") Long id) {
-        return service.checkout(id);
-    }
+//    @PostMapping(path = "/{id}")
+//    public CartDTO checkout(@PathVariable("id") Long id) {
+//        return service.checkout(id);
+//    }
 
 }

@@ -1,11 +1,9 @@
 package com.koehler.ehealth.order;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
+import com.koehler.ehealth.product.ProductDTO;
+import lombok.*;
+
+import java.util.Date;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,4 +12,13 @@ import lombok.ToString;
 @ToString
 @Builder
 public class OrderItemDTO {
+
+    private Long orderItemId;
+    private Long orderId;
+    private Long productId;
+    private Long quantity;
+    private Date created;
+    private Date updated;
+
+    private ProductDTO product;
 }

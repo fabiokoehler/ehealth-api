@@ -17,7 +17,9 @@ import lombok.ToString;
 @Builder
 public class CartProductDTO {
 
+    private Long cartProductId;
     private Long cartId;
+    private Long productId;
     private Long quantity;
     private ProductDTO product;
 

@@ -25,7 +25,7 @@ import java.util.List;
 @Builder
 public class OrderDTO {
 
-    private Long id;
+    private Long orderId;
     private Long userId;
     private String status;
     private Double total;

@@ -12,4 +12,6 @@ public interface OrderMapper {
     OrderDTO map(OrderEntity source);
 
     List<OrderDTO> map(List<OrderEntity> source);
+
+    OrderItemDTO map(OrderItemEntity value);
 }

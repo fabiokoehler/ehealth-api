@@ -1,18 +1,8 @@
 package com.koehler.ehealth.cart;
 
-import com.koehler.ehealth.product.ProductEntity;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 
@@ -28,13 +18,8 @@ public class CartProductEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long cartProductId;
-
-    @ManyToOne
-    private CartEntity cart;
-
-    @ManyToOne
-    private ProductEntity product;
-
+    private Long cartId;
+    private Long productId;
     private Long quantity;
     private Date created;
     private Date updated;
